@@ -1,0 +1,12 @@
+class_name: ApiTester
+modules:
+    enabled:
+        - REST:
+            #url:
+            depends: Yii2
+        #- \backend\tests\Helper\Api
+        - Yii2:
+            configFile: config/test.php
+            part: Json
+    config:
+        - Yii2

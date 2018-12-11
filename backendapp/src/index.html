@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html ng-app="Index" ng-controller="indexController">
+
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:16:41 GMT -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>H+ 后台主题UI框架 - 主页</title>
+
+    <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html" />
+    <![endif]-->
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="assets/lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.min.css">
+    <link rel="stylesheet" type="text/css" href="AUTH/css/index.css">
+    <script src="assets/lib/jquery/jquery.min.js"></script>
+    <script src="assets/js/iov.loadPublicjscss.js"></script>
+
+</head>
+
+<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+    <div id="wrapper">
+
+        <!--左侧导航开始-->
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="nav-close">
+                <i class="fa fa-times-circle"></i>
+            </div>
+            <div class="sidebar-collapse">
+                <ul class="nav" id="side-menu">
+                    <!--  -->
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+                            <span>
+                                <img alt="image" class="img-circle" src="assets/images/default/profile_small.jpg" />
+                            </span>
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="clear">
+                                    <span class="block m-t-xs">
+                                        <strong class="font-bold">Beaut-zihan</strong>
+                                    </span>
+                                    <span class="text-muted text-xs block">超级管理员
+                                        <b class="caret"></b>
+                                    </span>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li>
+                                    <a class="J_menuItem" href="form_avatar.html">修改头像</a>
+                                </li>
+                                <li>
+                                    <a class="J_menuItem" href="profile.html">个人资料</a>
+                                </li>
+                                <li>
+                                    <a class="J_menuItem" href="contacts.html">联系我们</a>
+                                </li>
+                                <li>
+                                    <a class="J_menuItem" href="mailbox.html">信箱</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="login.html">安全退出</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="logo-element">H+
+                        </div>
+                    </li>
+                    <!--  -->
+                    <li ng-repeat="item in menuList" repeat-finish>
+                        <a href="" title="{{item.text}}" data-tabs="open" data-options="{{item}}">
+                            <i class="fa {{item.icon}}"></i>
+                            <span class="nav-label" ng-bind="item.text"></span>
+                            <span class="fa arrow" ng-if="item.children"></span>
+                        </a>
+                        <ul class="nav nav-second-level">
+                            <li ng-repeat="child in item.children">
+                                <a href="" data-tabs="open" data-options="{{child}}">
+                                    <span ng-bind="child.text"></span>
+                                    <span class="fa arrow" ng-if="child.children"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+        <!--左侧导航结束-->
+
+        <!--右侧部分开始-->
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+            <div class="row content-tabs">
+
+                <button class="roll-nav roll-left" data-tabs="scrollLeft">
+                    <i class="fa fa-backward"></i>
+                </button>
+
+                <nav class="page-tabs">
+                    <div class="page-tabs-content">
+                        <a class="active" id="home-tab" role="tab" data-toggle="tabs" aria-controls="home"
+                            aria-expanded="true" data-href="#home">
+                            <i class="fa fa-refresh" data-tabs="refresh"></i> 首页
+                        </a>
+                    </div>
+                </nav>
+
+                <button class="roll-nav roll-right J_tabRight" data-tabs="scrollRight">
+                    <i class="fa fa-forward"></i>
+                </button>
+
+                <div class="btn-group roll-nav roll-right" data-hover="dropdown">
+                    <button class="dropdown J_tabClose" data-toggle="dropdown">
+                        操作
+                        <span class="caret"></span>
+                    </button>
+                    <ul role="menu" class="dropdown-menu dropdown-menu-right">
+                        <li data-tabs="closeCurrent">
+                            <a>
+                                </i> 关闭当前选项卡</a>
+                        </li>
+                        <!-- <li data-tabs="refreshCurrent">
+                                            <a></i> 刷新当前选项卡</a>
+                                        </li> -->
+                        <li class="divider"></li>
+                        <li data-tabs="closeAll">
+                            <a>
+                                </i>关闭全部选项卡</a>
+                        </li>
+                        <li data-tabs="closeOther">
+                            <a></i> 关闭其他选项卡</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <a href="login.html" class="roll-nav roll-right J_tabExit">
+                    <i class="fa fa fa-sign-out"></i> 退出</a>
+            </div>
+
+            <div class="row" id="content-main">
+                <iframe id="home" class="active" width="100%" height="100%" src="main.html" frameborder="0" seamless></iframe>
+            </div>
+
+        </div>
+        <!--右侧部分结束-->
+
+    </div>
+
+    <!-- ui框架 -->
+    <script src="assets/lib/plugins/layer/layer.min.js"></script>
+    <script src="assets/lib/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="assets/lib/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="assets/js/hplus/hplus.min.js"></script>
+    <script type="text/javascript" src="assets/lib/plugins/tabs/tabs.min.js"></script>
+    <!-- ui框架 -->
+
+    <script type="text/javascript" src="AUTH/index.js"></script>
+
+
+</body>
+
+</html>

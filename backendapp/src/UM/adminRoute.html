@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="adminRoute" ng-controller="controller">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>H+ 后台主题UI框架 - 主页</title>
+
+    <!--[if lt IE 9]>
+        <meta http-equiv="refresh" content="0;ie.html" />
+        <![endif]-->
+
+    <link rel="shortcut icon" href="favicon.ico">
+</head>
+
+<body class="gray-bg">
+    <div class="container-fluid">
+
+        <div class="panel panel-default search-form">
+            <form bootstrap-table-form="adminRoute-table">
+                <div class="form-inline no-margin">
+                    <div class="form-group" style="margin: 5px;">
+                        <label>路由名称</label>
+                        <input type="text" class="form-control" name="uname" />
+                    </div>
+                    <div class="form-group">
+                        <div bootstrap-table-search="adminRoute-table" class="btn btn-outline btn-primary btn-sm">
+                            <i class="fa fa-search icon-white"></i> 搜索</div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="panel panel-default">
+            <table id="adminRoute-table" data-toolbar=".action-toolbar" data-toggle="table" data-show-columns="true" data-autoheight="10"
+                data-pagination="true" data-filter-control="true" data-checkbox="true" data-show-refresh="true" data-show-export="true"
+                data-id-field="id" data-unique-id="id" data-method="get" data-custom-url="/admin/route/index" data-custom-windosurlparams="tabs,r"
+                data-hide-column="id,last_ip" class="table table-hover th-table">
+                <thead>
+                    <tr>
+                        <th data-checkbox="true" width="80"></th>
+                        <th data-sortable="true" data-field="id" width="80">ID</th>
+                        <th data-sortable="true" data-field="name" width="80">路由名称</th>
+                        <th data-formatter="operateFormatter" width="120">操作</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <script src="../assets/lib/jquery/jquery.min.js"></script>
+    <!-- 统一加载start -->
+    <script src="../assets/js/iov.loadPublicjscss.js"></script>
+    <!-- 统一加载end -->
+    <script src="../assets/js/iov.bootstrap.table.js"></script>
+    <script src="js/adminRoute.js"></script>
+
+</body>
+
+</html>
