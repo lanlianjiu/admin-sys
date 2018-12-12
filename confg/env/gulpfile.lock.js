@@ -22,7 +22,7 @@ module.exports = function () {
             timeout: 60000
         },
         server_web: "www.adminwebapp.top", //本地域名
-        server_api: "http://www.adminapi.com", //本地api域名
+        server_api: "http://backendapi.wenjy.top", //本地api域名
         port: 3000, //端口号
     }
 }();
