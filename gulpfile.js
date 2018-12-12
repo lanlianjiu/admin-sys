@@ -193,7 +193,7 @@
     gulp.task('serve', ['devCfg', 'openWeb'], function (cb) {
 
         browsersync.init({
-            host: "localhost",
+            host: iovCfg.server_web,
             port: iovCfg.port,
             server: {
                 baseDir: "./src",

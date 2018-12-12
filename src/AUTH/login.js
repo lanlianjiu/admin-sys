@@ -14,9 +14,9 @@
             $.ajax({
                 url: $.cfg.server_api + "/admin/user/login",
                 data: data,
-                beforeSend: function (request) {
-                    request.setRequestHeader("Authorization", "Basic og==");
-                },
+                // beforeSend: function (request) {
+                //     request.setRequestHeader("Authorization", "Basic og==");
+                // },
                 dataType: 'JSON',
                 async: false, //请求是否异步，默认为异步
                 type: 'POST',
@@ -27,7 +27,7 @@
                         $.localCache.set($.cfg.access_tokone, res.Authorization);
                         $.localCache.remove($.cfg.user);
                         $.localCache.set($.cfg.user, res.username);
-                        window.location.href = 'index.html';
+                        //window.location.href = 'index.html';
                     }
                 },
                 error: function () {
